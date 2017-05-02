@@ -1,5 +1,7 @@
-package saltcontroller;
+package saltview;
 	
+import java.nio.charset.Charset;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;

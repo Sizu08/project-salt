@@ -1,12 +1,15 @@
-package saltcontroller;
+package saltview;
 
 import java.io.FileInputStream;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -17,10 +20,20 @@ public class SaltController {
 	
 	@FXML
 	private GridPane gridList;
+	
 	private CardNode cardNode;
 	
 	@FXML
 	private ImageView imageTab;
+	
+	@FXML
+	private TableColumn tableValue;
+	
+	@FXML
+	private TableColumn tableAttr;
+	
+	@FXML
+	private TableView cardTable;
 	
 	FileInputStream input;
 	
@@ -40,12 +53,13 @@ public class SaltController {
 		 cardNode.setFitHeight(150);
 		 cardNode.setPreserveRatio(true);
 		 
-		 imageTab.setImage(image);
 		 cardNode.addEventFilter(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
 			 
 			 @Override
 			 public void handle(MouseEvent mouseEvent) {
-				 //System.out.println(cardNode.test);
+				 imageTab.setImage(image);
+				 //System.out.println(cardNode.name);
+				 
 				 
 			 }
 		 }

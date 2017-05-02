@@ -6,6 +6,8 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -14,14 +16,14 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="saltcontroller.SaltController">
+<BorderPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="saltview.SaltController">
    <bottom>
       <HBox prefHeight="165.0" prefWidth="1280.0" BorderPane.alignment="CENTER" />
    </bottom>
    <right>
       <TabPane prefHeight="569.0" prefWidth="299.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
-          <Tab text="Untitled Tab 1">
+          <Tab text="Image">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="540.0" prefWidth="119.0">
                      <children>
@@ -29,11 +31,21 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-            </content>
+          <Tab text="Stats">
+               <content>
+                  <TableView fx:id="cardTable" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="tableAttr" prefWidth="75.0" text="Attribute" />
+                      <TableColumn fx:id="tableValue" prefWidth="224.0" text="Value" />
+                    </columns>
+                  </TableView>
+               </content>
           </Tab>
+            <Tab text="Effect">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </right>
